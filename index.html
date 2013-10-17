@@ -17,7 +17,7 @@
   <script type="text/x-handlebars" data-template-name="bookmarks">
     <ul>
     {{#each item in model}}
-      <li>{{item.title}} | {{ item.url }}</li>
+      <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
     {{/each}}
     </ul>
   </script>

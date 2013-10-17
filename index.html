@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>pinbird-client</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>pinbird-client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+      padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <!-- Bootstrap  -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Already there via Ember -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
 
-  <script type="text/x-handlebars">
-    {{outlet}}
-  </script>
+    <script type="text/x-handlebars">
+      {{outlet}}
+    </script>
 
-  <script type="text/x-handlebars" data-template-name="bookmarks">
-    <ul>
-    {{#each item in model}}
-      <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
-    {{/each}}
-    </ul>
-  </script>
+    <script type="text/x-handlebars" data-template-name="bookmarks">
+      <ul>
+        {{#each item in model}}
+        <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
+        {{/each}}
+      </ul>
+    </script>
 
-  <script src="js/libs/jquery-1.9.1.js"></script>
-  <script src="js/libs/handlebars-1.0.0.js"></script>
-  <script src="js/libs/ember-1.0.0.js"></script>
-  <script src="js/libs/ember-data.js"></script>
-  <script src="js/app.js"></script>
+    <script src="js/libs/jquery-1.9.1.js"></script>
+    <script src="js/libs/handlebars-1.0.0.js"></script>
+    <script src="js/libs/ember-1.0.0.js"></script>
+    <script src="js/libs/ember-data.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
 
-</body>
+  </body>
 </html>

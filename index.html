@@ -14,10 +14,10 @@
     {{outlet}}
   </script>
 
-  <script type="text/x-handlebars" data-template-name="index">
+  <script type="text/x-handlebars" data-template-name="bookmarks">
     <ul>
     {{#each item in model}}
-      <li>{{item}}</li>
+      <li>{{item.title}} | {{ item.url }}</li>
     {{/each}}
     </ul>
   </script>

@@ -24,3 +24,9 @@ App.BookmarkRoute = Ember.Route.extend({
     return this.store.find('bookmark', params.bookmark_id);
   }
 });
+
+App.Bookmark = DS.Model.extend({
+  _id: DS.attr('string'),
+  title: DS.attr('string'),
+  url: DS.attr('string')
+});

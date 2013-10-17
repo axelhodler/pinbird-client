@@ -30,3 +30,7 @@ App.Bookmark = DS.Model.extend({
   title: DS.attr('string'),
   url: DS.attr('string')
 });
+
+App.ApplicationAdapter = DS.RESTAdapter.extend({
+  host: 'http://localhost:4567'
+});

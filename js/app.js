@@ -34,3 +34,8 @@ App.Bookmark = DS.Model.extend({
 App.ApplicationAdapter = DS.RESTAdapter.extend({
   host: 'http://localhost:4567'
 });
+
+// deal with the MongoDB ObjectId named "_id"
+App.ApplicationSerializer = DS.RESTSerializer.extend({
+  primaryKey: "_id"
+});

@@ -39,20 +39,32 @@
 
       <script type="text/x-handlebars" data-template-name="bookmarks">
         <div class="container">
+          <form {{action save on="submit"}}>
+            {{partial "bookmark_fields"}}
+            <button type="submit">Brave bookmark</button>
+          </form>
+
           <ul>
             {{#each item in model}}
             <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
             {{/each}}
           </ul>
         </div>
+        <div id="content">
+          {{ outlet }}
+        </div>
       </script>
 
+      <script type="text/x-handlebars" data-template-name="_bookmark_fields">
+        {{view Ember.TextField valueBinding="title" id="title" placeholder="Title" required="true"}}<br />
+        {{view Ember.TextField valueBinding="url" id="url" placeholder="Url" required="true"}}<br />
+      </script>
 
     <script src="js/libs/jquery-1.9.1.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
     <script src="js/libs/ember-1.0.0.js"></script>
     <script src="js/libs/ember-data.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 
   </body>

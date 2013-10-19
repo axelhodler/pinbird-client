@@ -25,6 +25,20 @@ App.BookmarkRoute = Ember.Route.extend({
   }
 });
 
+App.BookmarksController = Ember.ObjectController.extend({
+  actions: {
+    save: function() {
+      var bm = {
+        title: this.get('title'),
+        url: this.get('url')
+      }
+      var createdBm = this.store.createRecord('bookmark', bm);
+      // this calls the 'other' createRecord method which ultimataely saves
+      createdBm.save();
+    }
+  }
+});
+
 App.Bookmark = DS.Model.extend({
   _id: DS.attr('string'),
   title: DS.attr('string'),

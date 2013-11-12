@@ -9,60 +9,57 @@
       }
     </style>
   </head>
+
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Project name</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
-      <script type="text/x-handlebars">
-        <div class="container">
-          <h1>Bookmarks</h1>
-          <p>{{outlet}}</p>
-        </div>
-      </script>
+    <script type="text/x-handlebars">
+      <div class="container">
+        <h1>Bookmarks</h1>
+        <p>{{outlet}}</p>
+      </div>
+    </script>
 
-      <script type="text/x-handlebars" data-template-name="bookmarks">
-        <div class="row">
-          <div class="col-md-8">
-            <h2>left</h2>
-            <ul>
-              {{#each item in model}}
-              <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
-              {{/each}}
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h2>right</h2>
-            <form role="form" {{action save on="submit"}}>
-              <div class="form-group">
-                {{partial "bookmark_fields"}}
-                <button type="submit" class="btn btn-default">Save bookmark</button>
-              </div>
-            </form>
-          </div>
+    <script type="text/x-handlebars" data-template-name="bookmarks">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>left</h2>
+          <ul>
+            {{#each item in model}}
+            <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
+            {{/each}}
+          </ul>
         </div>
-      </script>
+        <div class="col-md-4">
+          <h2>right</h2>
+          <form role="form" {{action save on="submit"}}>
+            <div class="form-group">
+              {{partial "bookmark_fields"}}
+              <button type="submit" class="btn btn-default">Save bookmark</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </script>
 
-      <script type="text/x-handlebars" data-template-name="_bookmark_fields">
-        {{view Ember.TextField class="form-control" valueBinding="title" id="title" placeholder="Title" required="true"}}<br />
-        {{view Ember.TextField class="form-control" valueBinding="url" id="url" placeholder="Url" required="true"}}<br />
-      </script>
+    <script type="text/x-handlebars" data-template-name="_bookmark_fields">
+      {{view Ember.TextField class="form-control" valueBinding="title" id="title" placeholder="Title" required="true"}}<br />
+      {{view Ember.TextField class="form-control" valueBinding="url" id="url" placeholder="Url" required="true"}}<br />
+    </script>
 
     <script src="js/libs/jquery-1.9.1.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>

@@ -31,10 +31,15 @@ App.BookmarksController = Ember.ObjectController.extend({
       var bm = {
         title: this.get('title'),
         url: this.get('url')
-      }
+      };
       var createdBm = this.store.createRecord('bookmark', bm);
       // this calls the 'other' createRecord method which ultimataely saves
       createdBm.save();
+    },
+    delete: function(item){
+        var bm = item;
+        bm.deleteRecord();
+        bm.save();
     }
   }
 });

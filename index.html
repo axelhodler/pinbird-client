@@ -40,17 +40,22 @@
       </script>
 
       <script type="text/x-handlebars" data-template-name="bookmarks">
-        <div class="container">
-          <form {{action save on="submit"}}>
-            {{partial "bookmark_fields"}}
-            <button type="submit">Brave bookmark</button>
-          </form>
-
-          <ul>
-            {{#each item in model}}
-            <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
-            {{/each}}
-          </ul>
+        <div class="row">
+          <div class="col-md-8">
+            <h2>left</h2>
+            <ul>
+              {{#each item in model}}
+              <li>{{item.title}} | <a {{ bindAttr href="item.url" }}>{{ item.url }}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h2>right</h2>
+            <form {{action save on="submit"}}>
+              {{partial "bookmark_fields"}}
+              <button type="submit">Brave bookmark</button>
+            </form>
+          </div>
         </div>
       </script>
 

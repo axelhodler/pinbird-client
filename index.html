@@ -51,9 +51,11 @@
           </div>
           <div class="col-md-4">
             <h2>right</h2>
-            <form {{action save on="submit"}}>
-              {{partial "bookmark_fields"}}
-              <button type="submit">Brave bookmark</button>
+            <form role="form" {{action save on="submit"}}>
+              <div class="form-group">
+                {{partial "bookmark_fields"}}
+                <button type="submit" class="btn btn-default">Save bookmark</button>
+              </div>
             </form>
           </div>
         </div>

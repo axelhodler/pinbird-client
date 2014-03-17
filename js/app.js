@@ -51,7 +51,10 @@ App.Bookmark = DS.Model.extend({
 });
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({
-  host: 'http://localhost:5000'
+  host: 'http://localhost:5000',
+  headers : {
+      "Authorization":"test"
+  }
 });
 
 // deal with the MongoDB ObjectId named "_id"

@@ -30,7 +30,8 @@ App.BookmarksController = Ember.ObjectController.extend({
     save: function() {
       var bm = {
         title: this.get('title'),
-        url: this.get('url')
+        url: this.get('url'),
+        user: 'none'
       };
       var createdBm = this.store.createRecord('bookmark', bm);
       // this calls the 'other' createRecord method which ultimataely saves

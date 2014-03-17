@@ -47,7 +47,8 @@ App.BookmarksController = Ember.ObjectController.extend({
 App.Bookmark = DS.Model.extend({
   _id: DS.attr('string'),
   title: DS.attr('string'),
-  url: DS.attr('string')
+  url: DS.attr('string'),
+  user: DS.attr('user')
 });
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({

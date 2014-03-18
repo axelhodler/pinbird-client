@@ -49,7 +49,7 @@ App.Bookmark = DS.Model.extend({
   _id: DS.attr('string'),
   title: DS.attr('string'),
   url: DS.attr('string'),
-  user: DS.attr('user')
+  user: DS.attr('string')
 });
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({

@@ -1,5 +1,7 @@
 App = Ember.Application.create();
 
+App.ErrorController = Ember.ArrayController.extend({});
+
 App.BookmarksController = Ember.ObjectController.extend({
   actions: {
     save: function() {

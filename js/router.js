@@ -2,6 +2,7 @@ App.Router.map(function() {
   this.resource('bookmarks', function() {
     this.resource('bookmark', { path: ':bookmark_id' });
   });
+  this.resource('error', { path: 'error' });
 });
 
 // If the root is accessed transition to /bookmarks

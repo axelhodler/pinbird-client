@@ -18,6 +18,9 @@ App.BookmarksRoute = Ember.Route.extend({
   },
   actions: {
     error: function() {
+      var c = this.controllerFor('error');
+      c.set('errorMessage', 'message');
+
       this.transitionTo('error');
     }
   }

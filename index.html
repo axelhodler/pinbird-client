@@ -39,7 +39,7 @@
         <div class="col-md-8">
           <ul>
             {{#each item in model}}
-            <li><button {{action 'delete' item}} type="submit" class="btn btn-default btn-xs">
+            <li><button {{action "delete" item}} type="submit" class="btn btn-default btn-xs">
                 <span style="color: #f00" class="glyphicon glyphicon-remove"></span>
               </button>
               {{item.title}} | <a {{ bind-attr href="item.url" }}>{{ item.url }}</a></li>

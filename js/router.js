@@ -19,7 +19,7 @@ App.BookmarksRoute = Ember.Route.extend({
   actions: {
     error: function() {
       var c = this.controllerFor('error');
-      c.set('errorMessage', 'message');
+      c.set('errorMessage', 'The REST API seems to be offline');
 
       this.transitionTo('error');
     }

@@ -1,0 +1,17 @@
+{
+  "name": "pinbird-client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/xorrr/pinbird-client",
+  "authors": [
+    "xorrr <derxor@gmail.com>"
+  ],
+  "description": "bookmarking frontend",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

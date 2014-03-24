@@ -53,15 +53,19 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <form role="form" {{action "save" on="submit"}}>
-            <div class="form-group well">
-              <h2>Add a bookmark:</h2>
-              {{partial "bookmark_fields"}}
-              <button type="submit" class="btn btn-default">Save bookmark</button>
-            </div>
-          </form>
+          {{partial "addBookmarkForm"}}
         </div>
       </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="_addBookmarkForm">
+      <form role="form" {{action "save" on="submit"}}>
+        <div class="form-group well">
+          <h2>Add a bookmark:</h2>
+          {{partial "bookmark_fields"}}
+          <button type="submit" class="btn btn-default">Save bookmark</button>
+        </div>
+      </form>
     </script>
 
     <script type="text/x-handlebars" data-template-name="_bookmark_fields">

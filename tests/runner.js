@@ -10,6 +10,7 @@ if (window.location.search.indexOf("?test") !== -1) {
     '<link rel="stylesheet" href="tests/runner.css">' +
     '<link rel="stylesheet" href="bower_components/qunit/qunit/qunit.css">' +
 
+    '<script src="tests/test_helper.js"></script>' +
     '<script src="bower_components/qunit/qunit/qunit.js"></script>' +
     '<script src="tests/tests.js"></script>'
   )

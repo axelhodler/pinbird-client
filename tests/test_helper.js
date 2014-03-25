@@ -1,0 +1,2 @@
+App.setupForTesting();
+App.injectTestHelpers();

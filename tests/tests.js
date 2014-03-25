@@ -16,6 +16,19 @@ test("Index route transitions to /bookmarks route", function() {
   });
 });
 
+test("Can add bookmark", function() {
+  visit("/");
+  fillIn("#title", "New title");
+  fillIn("#url", "New url");
+  click("#add_bookmark");
+  andThen(function() {
+    ok(find("li:contains('New title')").length,
+       "The bookmark's title should display");
+    ok(find("li:contains('New url')").length,
+       "The bookmark's url should display");
+  });
+});
+
 test("Error route is mapped", function() {
   visit("/error").then(function() {
     equal("error", getCurrentPath());

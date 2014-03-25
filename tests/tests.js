@@ -1,12 +1,12 @@
 module("Integration tests", {
   setup: function() {
+    // reset the application state between each test
+    App.reset();
     // before each test, ensure the application is ready to run.
     Ember.run(App, App.advanceReadiness);
   },
 
   teardown: function() {
-    // reset the application state between each test
-    App.reset();
   }
 });
 

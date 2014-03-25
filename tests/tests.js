@@ -15,3 +15,9 @@ test("Index route transitions to /bookmarks route", function() {
     equal("bookmarks.index", getCurrentPath());
   });
 });
+
+test("Error route is mapped", function() {
+  visit("/error").then(function() {
+    equal("error", getCurrentPath());
+  });
+});

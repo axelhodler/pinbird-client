@@ -37,7 +37,7 @@ test("Can delete bookmark", function() {
   click("#add_bookmark");
 
   // hacky deletion
-  click(".btn-xs");
+  click("button[name=delete_bookmark]");
 
   andThen(function() {
     ok(!find("li:contains('New title2')").length, "bookmark was deleted");

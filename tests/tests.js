@@ -29,6 +29,22 @@ test("Can add bookmark", function() {
   });
 });
 
+test("Can delete bookmark", function() {
+  expect(2);
+  visit("/");
+  fillIn("#title", "New title2");
+  fillIn("#url", "New url2");
+  click("#add_bookmark");
+
+  // hacky deletion
+  click(".btn-xs");
+
+  andThen(function() {
+    ok(!find("li:contains('New title2')").length, "bookmark was deleted");
+    ok(!find("li:contains('New url2')").length, "bookmark was deleted");
+  });
+});
+
 test("Error route is mapped", function() {
   visit("/error").then(function() {
     equal("error", getCurrentPath());

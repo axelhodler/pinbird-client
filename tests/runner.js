@@ -12,6 +12,6 @@ if (window.location.search.indexOf("?test") !== -1) {
 
     '<script src="tests/test_helper.js"></script>' +
     '<script src="bower_components/qunit/qunit/qunit.js"></script>' +
-    '<script src="tests/tests.js"></script>'
+    '<script src="tests/integration_tests.js"></script>'
   )
 }

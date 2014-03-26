@@ -17,10 +17,8 @@ test("Index route transitions to /bookmarks route", function() {
 });
 
 test("Can add bookmark", function() {
-  visit("/");
-  fillIn("#title", "New title");
-  fillIn("#url", "New url");
-  click("#add_bookmark");
+  addBookmark("New title", "New url");
+
   andThen(function() {
     ok(find("li:contains('New title')").length,
        "The bookmark's title should display");
@@ -31,11 +29,8 @@ test("Can add bookmark", function() {
 
 test("Can delete bookmark", function() {
   expect(2);
-  visit("/");
-  fillIn("#title", "New title2");
-  fillIn("#url", "New url2");
-  click("#add_bookmark");
 
+  addBookmark("New title2", "New url2");
   // hacky deletion
   click("button[name=delete_bookmark]");
 

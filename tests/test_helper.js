@@ -8,3 +8,10 @@ Ember.Test.registerHelper('getCurrentPath', function() {
 
 App.setupForTesting();
 App.injectTestHelpers();
+
+var addBookmark = function(title, url) {
+  visit("/");
+  fillIn("#title", title);
+  fillIn("#url", url);
+  click("#add_bookmark");
+};

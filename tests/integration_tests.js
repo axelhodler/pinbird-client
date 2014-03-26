@@ -17,6 +17,8 @@ test("Index route transitions to /bookmarks route", function() {
 });
 
 test("Can add bookmark", function() {
+  expect(2);
+
   addBookmark("New title", "New url");
 
   andThen(function() {

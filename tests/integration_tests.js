@@ -16,6 +16,12 @@ test("Index route transitions to /bookmarks route", function() {
   });
 });
 
+test("Error route is mapped", function() {
+  visit("/error").then(function() {
+    equal("error", getCurrentPath());
+  });
+});
+
 test("Can add bookmark", function() {
   expect(2);
 
@@ -39,11 +45,5 @@ test("Can delete bookmark", function() {
   andThen(function() {
     ok(!find("li:contains('New title2')").length, "bookmark was deleted");
     ok(!find("li:contains('New url2')").length, "bookmark was deleted");
-  });
-});
-
-test("Error route is mapped", function() {
-  visit("/error").then(function() {
-    equal("error", getCurrentPath());
   });
 });

@@ -60,7 +60,9 @@
           </button>
           <a {{ bind-attr href="item.url" }}>{{ item.url }}</a> | {{item.title}}</li>
         {{/each}}
-        {{ partial "future_bookmark" }}
+        {{#if isEntering}}
+          {{ partial "future_bookmark" }}
+        {{/if}}
       </ul>
     </script>
 
@@ -84,8 +86,8 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="_bookmark_fields">
-      {{input class="form-control" value=url id="url" placeholder="Url"}}<br />
-      {{input class="form-control" value=title id="title" placeholder="Title"}}<br />
+      {{input class="form-control" value=url id="url" placeholder="Url" focus-in="inputFocussed"}}<br />
+      {{input class="form-control" value=title id="title" placeholder="Title" focus-in="inputFocussed"}}<br />
     </script>
 
     <script src="bower_components/jquery/jquery.js"></script>

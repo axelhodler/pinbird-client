@@ -19,9 +19,9 @@ App.BookmarksController = Ember.ObjectController.extend({
       this.set('url', '');
     },
     delete: function(item){
-        var bm = item;
-        bm.deleteRecord();
-        bm.save();
+      var bm = item;
+      bm.deleteRecord();
+      bm.save();
     },
     inputFocussed: function() {
       this.set('isEntering', true);
@@ -39,7 +39,7 @@ App.Bookmark = DS.Model.extend({
 App.ApplicationAdapter = DS.RESTAdapter.extend({
   host: 'http://localhost:5000',
   headers : {
-      "Authorization":"test"
+    "Authorization":"test"
   }
 });
 

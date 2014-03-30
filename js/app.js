@@ -3,6 +3,8 @@ App = Ember.Application.create();
 App.ErrorController = Ember.ArrayController.extend({});
 
 App.BookmarksController = Ember.ObjectController.extend({
+  isEntering: false,
+
   actions: {
     save: function() {
       var bm = {
@@ -20,6 +22,9 @@ App.BookmarksController = Ember.ObjectController.extend({
         var bm = item;
         bm.deleteRecord();
         bm.save();
+    },
+    inputFocussed: function() {
+      this.set('isEntering', true);
     }
   }
 });

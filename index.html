@@ -60,7 +60,14 @@
           </button>
           <a {{ bind-attr href="item.url" }}>{{ item.url }}</a> | {{item.title}}</li>
         {{/each}}
+        {{ partial "future_bookmark" }}
       </ul>
+    </script>
+
+    <script type="text/x-handlebars" id="_future_bookmark">
+      <li class="list-group-item">
+        {{ url }} | {{ title }}
+      </li>
     </script>
 
     <script type="text/x-handlebars" data-template-name="_addBookmarkForm">

@@ -15,8 +15,18 @@ Install the dependencies listed in `bower.json` via [bower](http://bower.io):
     ./bin/run.sh
 
 ## Run tests
+### Browser of your choice
 Append `?test` to the url in the address bar of your browser to run the tests via [QUnit](https://qunitjs.com/)
 
-via script:
+or via script:
 
     ./bin/run_tests.sh
+
+### Karma
+via:
+
+    karma start
+
+or via script:
+
+    ./bin/run_karma_tests.sh

@@ -8,6 +8,6 @@
     <a {{ bind-attr href="item.url" }}>{{ item.url }}</a> | {{item.title}}</li>
   {{/each}}
   {{#if isEntering}}
-  {{ partial "future_bookmark" }}
+  {{ partial "bookmark_next" }}
   {{/if}}
 </ul>

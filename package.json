@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "karma": "*",
+    "karma-qunit": "*"
+  },
+  "devDependencies": {
+    "karma-ember-preprocessor", "*",
+    "karma-phantomjs-launcher": "*"
+  }
+}

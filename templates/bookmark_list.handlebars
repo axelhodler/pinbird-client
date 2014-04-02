@@ -1,13 +1,13 @@
-      <h1>Bookmarks</h1>
-      <ul class="list-group">
-        {{#each item in model}}
-        <li class="list-group-item">
-          <button {{action "delete" item}} name="delete_bookmark" type="submit" class="btn btn-default btn-xs">
-            <span style="color: #f00" class="glyphicon glyphicon-remove"></span>
-          </button>
-          <a {{ bind-attr href="item.url" }}>{{ item.url }}</a> | {{item.title}}</li>
-        {{/each}}
-        {{#if isEntering}}
-          {{ partial "future_bookmark" }}
-        {{/if}}
-      </ul>
+<h1>Bookmarks</h1>
+<ul class="list-group">
+  {{#each item in model}}
+  <li class="list-group-item">
+    <button {{action "delete" item}} name="delete_bookmark" type="submit" class="btn btn-default btn-xs">
+      <span style="color: #f00" class="glyphicon glyphicon-remove"></span>
+    </button>
+    <a {{ bind-attr href="item.url" }}>{{ item.url }}</a> | {{item.title}}</li>
+  {{/each}}
+  {{#if isEntering}}
+  {{ partial "future_bookmark" }}
+  {{/if}}
+</ul>

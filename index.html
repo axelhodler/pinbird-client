@@ -39,5 +39,27 @@
 
     <script src="tests/runner.js"></script>
     <script src="tests/karma_helper.js"></script>
+
+    <script>
+      function compile(template) {
+      var templateName = template.split('/templates/').reverse()[0].replace('.handlebars', '');
+      $.ajax({
+      url: template,
+      cache: false,
+      async: false,
+      success: function (source) {
+      var input = Ember.Handlebars.precompile(source.toString());
+      Ember.TEMPLATES[templateName] = Ember.Handlebars.template(input);
+      }
+      });
+      }
+      compile('http://localhost:8080/templates/application.handlebars');
+      compile('http://localhost:8080/templates/bookmarks.handlebars');
+      compile('http://localhost:8080/templates/addBookmarkForm.handlebars');
+      compile('http://localhost:8080/templates/bookmark_fields.handlebars');
+      compile('http://localhost:8080/templates/bookmark_list.handlebars');
+      compile('http://localhost:8080/templates/error.handlebars');
+      compile('http://localhost:8080/templates/future_bookmark.handlebars');
+    </script>
   </body>
 </html>

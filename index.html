@@ -28,68 +28,6 @@
       </div>
     </div>
 
-    <script type="text/x-handlebars">
-      <div class="container">
-        <p>{{outlet}}</p>
-      </div>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="error">
-      <h1>Error</h1>
-      <div class="alert alert-danger">{{errorMessage}}</div>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="bookmarks">
-      <div class="row">
-        <div class="col-md-8">
-          {{partial "bookmark_list"}}
-        </div>
-        <div class="col-md-4">
-          {{partial "addBookmarkForm"}}
-        </div>
-      </div>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="_bookmark_list">
-      <h1>Bookmarks</h1>
-      <ul class="list-group">
-        {{#each item in model}}
-        <li class="list-group-item">
-          <button {{action "delete" item}} name="delete_bookmark" type="submit" class="btn btn-default btn-xs">
-            <span style="color: #f00" class="glyphicon glyphicon-remove"></span>
-          </button>
-          <a {{ bind-attr href="item.url" }}>{{ item.url }}</a> | {{item.title}}</li>
-        {{/each}}
-        {{#if isEntering}}
-          {{ partial "future_bookmark" }}
-        {{/if}}
-      </ul>
-    </script>
-
-    <script type="text/x-handlebars" id="_future_bookmark">
-      <li class="list-group-item">
-        <button type="button" class="btn btn-default btn-xs" disabled="disabled">
-          <span style="color: #f00" class="glyphicon glyphicon-remove"></span>
-        </button>
-        {{ url }} | {{ title }}
-      </li>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="_addBookmarkForm">
-      <form role="form" {{action "save" on="submit"}}>
-        <div class="form-group well">
-          <h2>Add a bookmark:</h2>
-          {{partial "bookmark_fields"}}
-          <button type="submit" id="add_bookmark" class="btn btn-default">Save bookmark</button>
-        </div>
-      </form>
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="_bookmark_fields">
-      {{input class="form-control" value=url id="url" placeholder="Url" focus-in="inputFocussed"}}<br />
-      {{input class="form-control" value=title id="title" placeholder="Title" focus-in="inputFocussed"}}<br />
-    </script>
-
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/handlebars/handlebars.js"></script>
     <script src="bower_components/ember/ember.js"></script>
@@ -100,5 +38,6 @@
     <script src="js/router.js"></script>
 
     <script src="tests/runner.js"></script>
+    <script src="tests/karma_helper.js"></script>
   </body>
 </html>

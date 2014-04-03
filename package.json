@@ -4,7 +4,7 @@
     "karma-qunit": "*"
   },
   "devDependencies": {
-    "karma-ember-preprocessor", "*",
+    "karma-ember-preprocessor": "*",
     "karma-phantomjs-launcher": "*"
   }
 }

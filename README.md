@@ -10,6 +10,10 @@ Install the dependencies listed in `bower.json` via [bower](http://bower.io):
 
     bower install
 
+## Precompile handlebars templates with [Grunt](http://gruntjs.com/)
+
+    grunt
+
 ## Run the app
 
     ./bin/run.sh

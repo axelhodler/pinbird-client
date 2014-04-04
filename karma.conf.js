@@ -15,7 +15,7 @@ module.exports = function(config) {
       "js/app.js",
       "js/router.js",
       "tests/*.js",
-      "templates/*.handlebars"
+      "js/templates/*.handlebars"
     ],
     reporters: ['progress'],
     port: 9876,

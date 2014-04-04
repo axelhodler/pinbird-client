@@ -4,10 +4,10 @@ module.exports = function(grunt) {
     emberTemplates: {
       compile: {
         options: {
-          templateBasePath: /templates\//
+          templateBasePath: 'js/templates/'
         },
         files: {
-          'js/templates.js': 'templates/*.handlebars'
+          'js/templates.js': 'js/templates/*.handlebars'
         }
       }
     }

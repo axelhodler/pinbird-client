@@ -15,3 +15,7 @@ var addBookmark = function(title, url) {
   fillIn("#url", url);
   click("#add_bookmark");
 };
+
+var expectPath = function(expectedPath) {
+  equal(getCurrentPath(), expectedPath);
+};

@@ -16,9 +16,9 @@ test("Index route transitions to /bookmarks route", function() {
   });
 });
 
-test("Error route is mapped", function() {
+test("Redirect to index if no error message is set", function() {
   visit("/error").then(function() {
-    equal("error", getCurrentPath());
+    equal(getCurrentPath(), "bookmarks.index");
   });
 });
 

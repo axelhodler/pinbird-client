@@ -12,6 +12,14 @@ App.IndexRoute = Ember.Route.extend({
   }
 });
 
+App.ErrorRoute = Ember.Route.extend({
+  setupController: function(controller) {
+    if (controller.get('errorMessage') === undefined) {
+      this.transitionTo('bookmarks');
+    }
+  }
+});
+
 App.BookmarksRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('bookmark');

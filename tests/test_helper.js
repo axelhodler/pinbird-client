@@ -19,3 +19,7 @@ var addBookmark = function(title, url) {
 var expectPath = function(expectedPath) {
   equal(getCurrentPath(), expectedPath);
 };
+
+var getControllerFor = function(route) {
+  return App.__container__.lookup('controller:' + route);
+};

@@ -23,7 +23,7 @@ test("Redirect to index if no error message is set", function() {
 });
 
 test("Dont redirect to index if error message is set", function() {
-  App.__container__.lookup('controller:error').set('errorMessage', 'asdf');
+  getControllerFor('error').set('errorMessage', 'asdf');
 
   visit("/error").then(function() {
     expectPath("error");

@@ -1,6 +1,6 @@
 App.rootElement = '#ember-testing';
 
-Ember.Test.registerHelper('getCurrentPath', function() {
+Ember.Test.registerHelper('getCurrentRoute', function() {
   var currentPath = App.__container__.lookup('controller:application')
         .currentPath;
   return currentPath;
@@ -16,8 +16,8 @@ var addBookmark = function(title, url) {
   click("#add_bookmark");
 };
 
-var expectPath = function(expectedPath) {
-  equal(getCurrentPath(), expectedPath);
+var expectRoute = function(expectedRoute) {
+  equal(getCurrentRoute(), expectedRoute);
 };
 
 var getControllerFor = function(route) {

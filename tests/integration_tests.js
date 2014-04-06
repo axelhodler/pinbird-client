@@ -12,13 +12,13 @@ module("Integration tests", {
 
 test("Index route transitions to /bookmarks route", function() {
   visit("/").then(function () {
-    expectPath("bookmarks.index");
+    expectRoute("bookmarks.index");
   });
 });
 
 test("Redirect to index if no error message is set", function() {
   visit("/error").then(function() {
-    expectPath("bookmarks.index");
+    expectRoute("bookmarks.index");
   });
 });
 
@@ -26,7 +26,7 @@ test("Dont redirect to index if error message is set", function() {
   getControllerFor('error').set('errorMessage', 'asdf');
 
   visit("/error").then(function() {
-    expectPath("error");
+    expectRoute("error");
   });
 });
 

@@ -5,7 +5,6 @@ App.Router.map(function() {
   this.resource('error', { path: 'error' });
 });
 
-// If the root is accessed transition to /bookmarks
 App.IndexRoute = Ember.Route.extend({
   redirect: function() {
     this.transitionTo('bookmarks');

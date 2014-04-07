@@ -1,6 +1,8 @@
 App = Ember.Application.create();
 
-App.ErrorController = Ember.ArrayController.extend({});
+App.ErrorController = Ember.ObjectController.extend({
+  errorMessage: ''
+});
 
 App.BookmarksController = Ember.ObjectController.extend({
   isEntering: false,

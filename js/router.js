@@ -14,7 +14,7 @@ App.IndexRoute = Ember.Route.extend({
 
 App.ErrorRoute = Ember.Route.extend({
   beforeModel: function() {
-    if (this.controllerFor('error').get('errorMessage') === undefined) {
+    if (this.controllerFor('error').get('errorMessage') === '') {
       this.transitionTo('bookmarks');
     }
   }

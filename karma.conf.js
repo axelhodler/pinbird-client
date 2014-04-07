@@ -10,7 +10,7 @@ module.exports = function(config) {
       "bower_components/bootstrap/dist/js/bootstrap.js",
 
       "js/app.js",
-      "js/router.js",
+      "js/routes.js",
       "tests/*.js",
       "js/templates/*.handlebars"
     ],

@@ -3,6 +3,7 @@ App.Router.map(function() {
     this.resource('bookmark', { path: ':bookmark_id' });
   });
   this.resource('error', { path: 'error' });
+  this.resource('missing', { path: '*path' });
 });
 
 App.IndexRoute = Ember.Route.extend({

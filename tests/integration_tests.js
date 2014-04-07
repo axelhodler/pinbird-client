@@ -30,6 +30,16 @@ test("Dont redirect to index if error message is set", function() {
   });
 });
 
+test("redirect nonexistent route to error", function() {
+  visit("/asdf").then(function() {
+    expectRoute("error");
+  });
+
+  visit("/asdfg").then(function() {
+    expectRoute("error");
+  });
+});
+
 test("Can add bookmark", function() {
   expect(2);
 

@@ -1,7 +1,16 @@
 App = Ember.Application.create();
 
 App.ErrorController = Ember.ObjectController.extend({
-  errorMessage: ''
+  errorMessage: '',
+
+  actions: {
+    missingRoute: function() {
+      this.set('errorMessage', 'the chosen route does not exist');
+    },
+    backendDown: function() {
+      this.set('errorMessage', 'The REST API seems to be offline');
+    }
+  }
 });
 
 App.BookmarksController = Ember.ObjectController.extend({

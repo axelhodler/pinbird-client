@@ -13,7 +13,7 @@ App.IndexRoute = Ember.Route.extend({
 });
 
 App.ErrorRoute = Ember.Route.extend({
-  beforeModel: function() {
+  redirect: function() {
     if (this.controllerFor('error').get('errorMessage') === '') {
       this.transitionTo('bookmarks');
     }
@@ -21,9 +21,8 @@ App.ErrorRoute = Ember.Route.extend({
 });
 
 App.MissingRoute = Ember.Route.extend({
-  beforeModel: function() {
-    this.controllerFor('error').set('errorMessage',
-                                    'the chosen route does not exist');
+  redirect: function() {
+    this.controllerFor('error').send('missingRoute');
     this.transitionTo('error');
   }
 });
@@ -34,8 +33,7 @@ App.BookmarksRoute = Ember.Route.extend({
   },
   actions: {
     error: function() {
-      this.controllerFor('error').set('errorMessage',
-                                      'The REST API seems to be offline');
+      this.controllerFor('error').send('backendDown');
       this.transitionTo('error');
     }
   }

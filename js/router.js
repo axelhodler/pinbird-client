@@ -20,15 +20,22 @@ App.ErrorRoute = Ember.Route.extend({
   }
 });
 
+App.MissingRoute = Ember.Route.extend({
+  beforeModel: function() {
+    this.controllerFor('error').set('errorMessage',
+                                    'the chosen route does not exist');
+    this.transitionTo('error');
+  }
+});
+
 App.BookmarksRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('bookmark');
   },
   actions: {
     error: function() {
-      var c = this.controllerFor('error');
-      c.set('errorMessage', 'The REST API seems to be offline');
-
+      this.controllerFor('error').set('errorMessage',
+                                      'The REST API seems to be offline');
       this.transitionTo('error');
     }
   }
